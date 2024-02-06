@@ -1,0 +1,7 @@
+require 'net/ping'
+(1..254).each do |host|
+  ip = "192.168.1.#{host}"
+  if Net::Ping::External.new(ip).ping?
+    puts "#{ip} is online"
+  end
+end
